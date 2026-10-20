@@ -201,7 +201,7 @@ When `[fills] mirror_hip4 = true` (the default), fills with `#`-prefixed coins (
 
 ## Alternative: Pre-Indexed Fills
 
-If you only need historical trade fills (not EVM blocks or HIP4 contest events) and don't want to run `fills-backfill`, [Hydromancer Reservoir](https://docs.hydromancer.xyz/reservoir) publishes already-parsed Hyperliquid fills as Parquet on S3 (`s3://hydromancer-reservoir`, region `ap-northeast-1`, requester pays). Files are partitioned by `date=YYYY-MM-DD` under `by_dex/{dex}/...`, covering core Hyperliquid perps and HIP-3 dexes, and can be queried directly with DuckDB or Polars. It also includes 1-second candles, 20-level order book snapshots at 1-minute cadence, and daily position snapshots. Coverage starts in mid-2025, and HIP4 (`#`) markets aren't listed in its docs, so `fills-backfill` from `hl-mainnet-node-data` is still the way to go for HIP4 trades or when you want your own parsing and storage.
+If you only need historical trade fills (not EVM blocks or HIP4 contest events) and don't want to run `fills-backfill`, [Hydromancer Reservoir](https://hydromancer.xyz/hyperliquid-historical-data) publishes already-parsed Hyperliquid fills as Parquet on S3 (`s3://hydromancer-reservoir`, region `ap-northeast-1`, requester pays). Files are partitioned by `date=YYYY-MM-DD` under `by_dex/{dex}/...`, covering core Hyperliquid perps and HIP-3 dexes, and can be queried directly with DuckDB or Polars. It also includes 1-second candles, 20-level order book snapshots at 1-minute cadence, and daily position snapshots. Coverage starts in mid-2025, and HIP4 (`#`) markets aren't listed in its docs, so `fills-backfill` from `hl-mainnet-node-data` is still the way to go for HIP4 trades or when you want your own parsing and storage.
 
 ## Why
 
